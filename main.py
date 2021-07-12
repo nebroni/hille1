@@ -1,21 +1,20 @@
-from django.conf import settings
 from django.core.management import execute_from_command_line
 from django.http import  HttpResponseRedirect
 from django.urls import path
 from django.shortcuts import render
 from password import password as p
 
-settings.configure(
-	ROOT_URLCONF=__name__,
-	DEBUG=True,
-	SECRET_KEY='secret',
-	TEMPLATES=[
-		{
-			'BACKEND': 'django.template.backends.django.DjangoTemplates',
-			'DIRS': ['C:\\Users\\User\\PycharmProjects\\hillel1\\html'],
-		}
-	]
-)
+ROOT_URLCONF=__name__,
+DEBUG=True,
+SECRET_KEY='secret',
+TEMPLATES=[
+	{
+		'BACKEND': 'django.template.backends.django.DjangoTemplates',
+		'DIRS': ['C:\\Users\\User\\PycharmProjects\\hillel1\\html'],
+	}
+]
+
+
 
 
 dict1 = {}
@@ -37,4 +36,5 @@ urlpatterns = [
 	path('<key>', redirect)
 ]
 
-execute_from_command_line()
+if __name__ == "__main__":
+	execute_from_command_line()
